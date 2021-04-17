@@ -6,6 +6,7 @@
 /**/bin
 /**/node_modules
 /**/pkg
+/**/package-lock.json
 
 /.pnp
 .pnp.js
