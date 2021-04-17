@@ -2,6 +2,11 @@
 
 # dependencies
 /node_modules
+/pkg
+/**/bin
+/**/node_modules
+/**/pkg
+
 /.pnp
 .pnp.js
 
