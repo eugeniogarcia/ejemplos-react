@@ -83,3 +83,43 @@ Con `useLayoutEffect` podemos definir un efecto que se invoca antes de que se pi
 ```
 
 Si `useLayoutEffect` devuelve una función, esta función será invocada cuando el componente se destruya.
+
+## Reducer.js
+
+Con `useReducer` podemos manejar el estado de forma más conveniente, especialmente cuando los estados son complicados, y tienen muchos campos que queremos actualizar de forma independiente.
+
+Supongamos que tenemos este estado:
+
+```js
+const initialState = {
+    id: "983397695",
+    firstName: "Eugenio",
+    lastName: "Garcia Castellanos",
+    city: "Valladolid",
+    state: "Castilla y Leon",
+    email: "egsmartin@gmail.com",
+    admin: false
+};
+```
+
+Si queremos actualizar el campo `admin`, con `useState` tendríamos que hacer esto:
+
+```js
+const [usuario, setUser] = useState(initialState);
+
+...
+
+setUser(x=>{...usuario,admin:x});
+```
+
+Con `useReducer` podríamos hacer:
+
+```js
+useReducer((state, newState) => ({ ...state, ...newState }),initialState);
+
+...
+
+setState({ admin: true })}
+```
+
+Resulta más _claro_ con `useReducer`.

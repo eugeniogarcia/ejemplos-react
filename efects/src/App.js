@@ -7,6 +7,8 @@ import EffectCondicionadoProblema from "./EffectCondicionado2"
 import EffectCondicionadoSolucion from "./EffectCondicionado3"
 import EffectCondicionadoSolucionBis from "./EffectCondicionado4"
 import EffectLayout from "./EffectLayout"
+import Reducer from "./Reducer"
+
 
 export default function App() {
   return (
@@ -20,6 +22,7 @@ export default function App() {
           <li><Link to="condSolucion">Usar un Objeto en la condición (solución)</Link></li>
           <li><Link to="condSolucion2">Usar un Objeto en la condición (solución 2)</Link></li>
           <li><Link to="posicion">Usar useEffectLayout para medir la dimensión de la ventana</Link></li>
+          <li><Link to="reducer">Usar useReducer</Link></li>
         </ul>
         <Switch>
           <Route exact path="/"><Effect/></Route>
@@ -29,6 +32,7 @@ export default function App() {
           <Route path="/condSolucion"><EffectCondicionadoSolucion /></Route>
           <Route path="/condSolucion2"><EffectCondicionadoSolucionBis /></Route>
           <Route path="/posicion"><EffectLayout /></Route>
+          <Route path="/reducer"><Reducer /></Route>
         </Switch>
       </Router>
     </Fragment>);
