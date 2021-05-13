@@ -3,6 +3,9 @@ import { FixedSizeList } from "react-window";
 import { Route, Link,Switch} from "react-router-dom";
 import faker from "faker";
 import List from "./Lista"
+import GitHubUser from "./GitHubUser"
+import UserRepositories from "./RepositoriosUsuario"
+import GitHubUserRepo from "./GitHubUserRepo"
 
 const bigList = [...Array(5000)].map(() => ({
   name: faker.name.findName(),
@@ -32,12 +35,17 @@ export default function App() {
             <Link to="/lista">Lista Normal</Link>
             {"  "}
             <Link to="/virtual">Lista Virtual</Link>
+            {"  "}
+            <Link to="/usuario">Usuario Github</Link>
+            {"  "}
+            <Link to="/repos">Repositorios</Link>
+            {"  "}
+            <Link to="/userrepos">Usuario Github y Repositorios</Link>
           </nav>
         <Switch>
-          <Route exact path="/"
-          render={() => <h1>Hola!</h1>}/>
+          <Route exact path="/" render={() => <h1>Hola!</h1>}/>
           <Route path="/lista"
-          render={() => <List
+              render={() => <List
                           data={bigList}
                           renderEmpty={<p>This list is empty</p>}
                           renderItem={item => (
@@ -48,12 +56,18 @@ export default function App() {
                               </p>
                             </div>)} />}/>
           <Route path="/virtual"
-          render={() => <FixedSizeList
+              render={() => <FixedSizeList
                           height={window.innerHeight}
                           width={window.innerWidth - 20}
                           itemCount={bigList.length}
                           itemSize={50}>
                           {renderRow}</FixedSizeList>} />
+          <Route path="/usuario"
+              render={() => <GitHubUser login="eugeniogarcia" />} />
+          <Route path="/repos"
+              render={() => <UserRepositories login="eugeniogarcia" />} />
+          <Route path="/userrepos"
+              render={() => <GitHubUserRepo login="eugeniogarcia" />} />
         </Switch>
     </div>);
 }
