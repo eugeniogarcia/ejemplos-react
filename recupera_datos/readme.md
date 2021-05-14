@@ -6,3 +6,4 @@
     - Una lista virtualizada. En una lista virtualizada se renderizan los datos _visibles_ en la ventana, no todos los datos asociados a la lista. Esto redunda en un mejor rendimiento
     - Custom hook para recuperar datos con fetch. Creamos también un componente, _Fetch_, que nos permite generalizar obtener datos de una uri, y definir como visualizarlos. EL hook y el componente son dos capas de abstracción que permiten la reutilización. En un caso homogeneizamos como se recuperan los datos, en el otro uniformizamos como se visualizan
 	- Incorporamos _reactmarkdown_ para visualizar el _readme.md_ de los repositorios. Se muestra como hacer multiples llamadas a apis
+    - Hacemos queries _graphql_ usando la libreria _graphql-request_.

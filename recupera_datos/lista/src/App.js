@@ -6,6 +6,7 @@ import List from "./Lista"
 import GitHubUser from "./GitHubUser"
 import UserRepositories from "./RepositoriosUsuario"
 import GitHubUserRepo from "./GitHubUserRepo"
+import ReposGraphQL from "./GraphQL"
 
 const bigList = [...Array(5000)].map(() => ({
   name: faker.name.findName(),
@@ -41,6 +42,9 @@ export default function App() {
             <Link to="/repos">Repositorios</Link>
             {"  "}
             <Link to="/userrepos">Usuario Github y Repositorios</Link>
+            {"  "}
+            <Link to="/graphql">Usando GraphQL</Link>
+            
           </nav>
         <Switch>
           <Route exact path="/" render={() => <h1>Hola!</h1>}/>
@@ -68,6 +72,7 @@ export default function App() {
               render={() => <UserRepositories login="eugeniogarcia" />} />
           <Route path="/userrepos"
               render={() => <GitHubUserRepo login="eugeniogarcia" />} />
+        <Route exact path="/graphql" render={() => <ReposGraphQL/>} />
         </Switch>
     </div>);
 }
