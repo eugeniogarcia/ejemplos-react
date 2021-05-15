@@ -31,8 +31,8 @@ const client = new GraphQLClient(
     }
 );
 
-export default function ReposGraphQL() {
-    const [login, setLogin] = useState("eugeniogarcia");
+export default function ReposGraphQL({ usuario = "eugeniogarcia"}) {
+    const [login, setLogin] = useState(usuario);
     const [userData, setUserData] = useState();
 
     useEffect(() => {
